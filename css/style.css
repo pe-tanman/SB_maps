@@ -1,5 +1,5 @@
 #altitude-meter {
- width: 500px;
+ width: 200px;
  height: 25px;
  border: 1px solid #ccc;
  border-radius: 3px;
@@ -21,15 +21,27 @@
  );
 background-size: 100% 100%;
 }
-.scale {
- display: flex;
- width: 100%;
- padding: 0px;
-flex-direction: column;
- justify-content: space-between;
- list-style: none;
+
+.map-image-container{
+    display: flex;
+    gap: 10px;
+}
+.info-container{
+    padding: 10px 10px 10px 10px;
+}
+.meter-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 350px;
+    padding: 10px 10px 10px 10px;
+    width: fit-content;
+   
 }
 
-.scale li {
- text-align: center;
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px 10px 10px 10px;
 }

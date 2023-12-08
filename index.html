@@ -13,41 +13,41 @@
 
   <style>
     body {
-      padding: 0;
-      margin: 0
+      padding: 10px;
+      margin: 10px;
     }
-
     html,
-    body,
-    #map {
-      height: 600px;
-      width: 600px;
-      ;
-    }
+    body
   </style>
   <script src="simulation_demo.js" defer></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <h1>現在の位置</h1>
-  <div id="map"></div>
+  <div class="map-image-container">
+    <div id="map" style="width: 600px; height: 600px;"></div>
+    <div>
+      <h2>気球からの最新画像</h2>
+      <img src="3000.jpg" alt="上空からの画像" style="width: 500px; height: 300px;">
+      <p>（サンプル画像）</p>
+      </div>
+    
+    </div>
+  
   <label for="switch">
     <input type="checkbox" id="chaseCheckbox" />
     ビューの追従
   </label>
-  <p id="altitude">高度</p>
-  <p id="timer">00:00:00</p>
-  <div class="meter-wrapper">
+  <div class="info-container">
+    <h2>運行情報</h2>
+  <div class="meter-wrapper"> 
     <meter id="altitude-meter" min="0" max="33000" low="0" high="30000" optimum="5000"></meter>
-    <ul class="scale">
-      <li><span class="scale">0</span></li>
-      <li><span class="scale">5000</span></li>
-      <li><span class="scale">10000</span></li>
-      <li><span class="scale">20000</span></li>
-      <li><span class="scale">30000</span></li>
-      <li><span class="scale"></span></li>
-    </ul>
+    <div class="info">
+      <p id="altitude">高度</p>
+      <p id="timer">00:00:00</p>
+      </div>
+     
+  </div>
   </div>
 
 </html>

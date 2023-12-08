@@ -1,0 +1,40 @@
+
+latLng ← {34, 139}//発射位置
+altitude ← 0//高度
+time ← 0//経過時間
+fallTime ← 0//落下し始めてからの時間
+horizontalMeterPerSec ← 5//水平方向の秒速
+moveUpMeterPerSec ← 4//鉛直方向の秒速
+landingMeterPerSec ← 5//パラシュートが開いてからの時間
+goalAltitude ← 32000//最高高度、これ以上の高度になると落下し始める高度
+parachuteOpenAltitude ← 500//パラシュートが開く高度
+longtitudePerSec ← horizontalMeterPerSec × 360 / (4 × 10 ^ 7)× sin() //経度
+
+simulatedLandingLatLng ← {
+    latLng[0] + latitudePerSec * (goalAltitude / moveUpMeterPerSec + Math.sqrt(2 * (goalAltitude - parachuteOpenAltitude) / 9.8) + parachuteOpenAltitude / landingMeterPerSec),
+    latLng[1] + longtitudePerSec * (goalAltitude / moveUpMeterPerSec + Math.sqrt(2 * (goalAltitude - parachuteOpenAltitude) / 9.8) + parachuteOpenAltitude / landingMeterPerSec)
+}//予測落下位置
+
+
+
+
+
+関数 moveUp() 
+  ｜  ...
+
+
+関数 fall()
+  ｜  ...
+
+
+関数 landing() //関数landingはパラシュートが開いてからの動きを表示する。一秒ごとに繰り返し実行される
+    ｜latLng[1] ← latLng[1] + longtitudePerSec
+    ｜altitude ← altitude - (landingMeterPerSec - Math.random() + 0.5)
+    ｜地図を更新する(latLng)
+    ｜time ← time + 1
+    //着地
+    ｜もし landingMeterPerSec > altitude ならば,
+        ｜表示する("着地")
+        ｜繰り返しを終了する
+    
+...

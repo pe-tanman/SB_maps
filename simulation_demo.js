@@ -2,13 +2,13 @@ var marker = '';
 var simulationMarker;
 var map = L.map('map');
 var latLng = [34.69996700000007, 138.9754790000003];
-var altitude = 31950;
+var altitude = 0;
 var time = 0;
 var fallTime = 0;
 const horizontalMeterPerSec = 5;//水平方向の秒速
 const moveUpMeterPerSec = 4;//鉛直方向の秒速
-const landingMeterPerSec = 5;
-const goalAltitude = 32000;
+const landingMeterPerSec = 1.8;
+const goalAltitude = 35000;
 const parachuteOpenAltitude = 500;
 const latitudePerSec = horizontalMeterPerSec * 360 / 4 / 10 ** 7 * 0.3;//一秒間に進む緯度
 const longtitudePerSec = horizontalMeterPerSec * 360 / 4 / 10 ** 7 * 0.7;//経度
